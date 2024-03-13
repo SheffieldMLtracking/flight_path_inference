@@ -1,2 +1,5 @@
+import flight_path_inference.trajectory_gp
+
+
 def test_trajectory_gp():
-    assert True
+    flight_path_inference.trajectory_gp.run()

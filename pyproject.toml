@@ -18,8 +18,13 @@ dynamic = ["version"]
 requires-python = ">= 3.8"
 dependencies = [
     "numpy==1.*",
+    # Particle filter
     "scipy==1.*",
-    "particles==0.*"
+    "particles==0.*",
+    # Gaussian process
+    "tensorflow-cpu==2.*",
+    "tensorflow-probability==0.*",
+    "tf-keras==2.*"
 ]
 authors = [
     { name = "Michael Smith", email = "m.t.smith@sheffield.ac.uk" },
@@ -27,6 +32,7 @@ authors = [
 maintainers = [
     { name = "Michael Smith", email = "m.t.smith@sheffield.ac.uk" },
     { name = "Joe Heffer", email = "j.heffer@sheffield.ac.uk" },
+    { name = "Shi Min Chua", email = "s.chua@sheffield.ac.uk " },
 ]
 license = { file = "LICENSE" }
 keywords = ["bee-tracking"]
