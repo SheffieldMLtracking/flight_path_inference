@@ -1,0 +1,63 @@
+# Python package
+# https://packaging.python.org/en/latest/
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml
+
+# Build backend options
+[build-system]
+# https://setuptools.pypa.io/en/latest/
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+# Package metadata
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#basic-information
+[project]
+name = "flight_path_inference"
+description = "3D flight path inference using bee tracking images with retroreflection detection methods."
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">= 3.8"
+dependencies = [
+    "numpy==1.*",
+    "scipy==1.*",
+    "particles==0.*"
+]
+authors = [
+    { name = "Michael Smith", email = "m.t.smith@sheffield.ac.uk" },
+]
+maintainers = [
+    { name = "Michael Smith", email = "m.t.smith@sheffield.ac.uk" },
+    { name = "Joe Heffer", email = "j.heffer@sheffield.ac.uk" },
+]
+license = { file = "LICENSE" }
+keywords = ["bee-tracking"]
+
+# PyPI classifiers
+# https://pypi.org/classifiers/
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+# https://peps.python.org/pep-0631/
+[project.optional-dependencies]
+test = [
+    "flake8",
+    "pytest"
+]
+
+[project.urls]
+Homepage = "https://www.sheffield.ac.uk/dcs/people/academic/michael-smith"
+Repository = "https://github.com/SheffieldMLtracking/flight_path_inference"
+Issues = "https://github.com/SheffieldMLtracking/flight_path_inference/issues"
+Changelog = "https://github.com/SheffieldMLtracking/flight_path_inference/releases"
+Documentation = "https://github.com/SheffieldMLtracking"
+
+# https://docs.pytest.org/en/7.1.x/reference/customize.html#pyproject-toml
+[tool.pytest.ini_options]
+# https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH
+pythonpath = ["src"]
