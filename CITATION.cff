@@ -5,8 +5,7 @@
 cff-version: 1.2.0
 title: flight_path_inference
 message: >-
-  Using Data Driven Artificial Intelligence to Analyse
-  Pollinator Behaviour
+  3D flight path inference
 type: software
 authors:
   - given-names: Michael Thomas
@@ -24,11 +23,11 @@ authors:
     family-names: Chua
     email: s.chua@sheffield.ac.uk
     affiliation: University of Sheffield
-repository-code: 'https://github.com/SheffieldMLtracking'
+repository-code: 'https://github.com/SheffieldMLtracking/flight_path_inference'
 abstract: >-
-  Using Data Driven Artificial Intelligence to Analyse
-  Pollinator Behaviour
+  Using Data Driven Artificial Intelligence to Analyse Pollinator Behaviour
 keywords:
   - computer-vision
   - machine-learning
+  - inference
 license: GPL-3.0

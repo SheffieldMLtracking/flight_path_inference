@@ -25,6 +25,10 @@ class TrajectoryDist(dists.ProbDist):
     dim = 6  # dimension of variates [x,y,z,vx,vy,vz]
     dtype = 'float64'
 
+    def __init__(self, loc=0., scale=1.):
+        self.loc = loc
+        self.scale = scale
+
     def getdist(self, origin, vect, points):
         return np.linalg.norm(np.cross(vect, points - origin), axis=1) / np.linalg.norm(vect)
 
@@ -50,10 +54,6 @@ class TrajectoryDist(dists.ProbDist):
         the inverse CDF function at point u
         """
         raise NotImplementedError
-
-    def __init__(self, loc=0., scale=1.):
-        self.loc = loc
-        self.scale = scale
 
 
 class BeeTrajectoryNoVelocity(ssm.StateSpaceModel):
