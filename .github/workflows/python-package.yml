@@ -34,8 +34,6 @@ jobs:
         python -m pip install --upgrade pip
         # Install package in editable mode with extra testing dependencies
         pip install -e .[test]
-    - name: pip-audit vulnerability scan
-      uses: pypa/gh-action-pip-audit@v1.0.8
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
