@@ -1,10 +1,9 @@
 """
-Gaussian process
+Infer a 3D trajectory using a Gaussian process (GP) method.
 """
 
 import numpy as np
 import tensorflow as tf
-import tensorflow_probability as tfp
 from tensorflow_probability import distributions as tfd
 
 
@@ -23,7 +22,7 @@ def buildinputmatrix(min_time, max_time, size):
     """
     Constructs a matrix of [3*size,2], where the first column is time and second is axis (x,y,z).
     """
-    A = []
+    A = list()
     for ax in range(3):
         Aax = np.c_[np.linspace(min_time, max_time, size), np.full(size, ax)]
         A.extend(Aax)

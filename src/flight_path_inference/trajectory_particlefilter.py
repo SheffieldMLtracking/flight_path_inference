@@ -1,11 +1,9 @@
-from scipy.spatial.transform import Rotation as R
-from scipy import stats
-from particles import distributions as dists
-import matplotlib.pyplot as plt
+import numpy as np
 import particles
+import scipy.stats
+from particles import distributions as dists
 from particles import state_space_models as ssm
 from particles.collectors import Moments
-import numpy as np
 
 
 class TrajectoryDist(dists.ProbDist):
@@ -33,11 +31,10 @@ class TrajectoryDist(dists.ProbDist):
         the log-density for a camera/spot 6-dim vector (first three=camera location, last three=vector to spot)
         """
         distance = self.getdist(x[:3], x[3:6], self.loc)
-        pnorm = stats.norm.logpdf(distance, loc=0, scale=self.scale)
-        pflat = stats.uniform.logpdf(distance, loc=-15, scale=30)
+        pnorm = scipy.stats.norm.logpdf(distance, loc=0, scale=self.scale)
+        pflat = scipy.stats.uniform.logpdf(distance, loc=-15, scale=30)
+        # return scipy.stats.norm.logpdf(self.getdist(x[:3],x[3:6],self.loc), loc=0, scale=self.scale)
         return np.logaddexp(pnorm, pflat) - np.log(2)
-
-        # return stats.norm.logpdf(self.getdist(x[:3],x[3:6],self.loc), loc=0, scale=self.scale)
 
     def rvs(self, size=None):
         """

@@ -15,7 +15,9 @@ name = "flight_path_inference"
 description = "3D flight path inference using bee tracking images with retroreflection detection methods."
 readme = "README.md"
 dynamic = ["version"]
+# Status of Python versions https://devguide.python.org/versions/
 requires-python = ">= 3.8"
+# Required packages
 dependencies = [
     "numpy==1.*",
     # Particle filter
@@ -35,7 +37,7 @@ maintainers = [
     { name = "Shi Min Chua", email = "s.chua@sheffield.ac.uk " },
 ]
 license = { file = "LICENSE" }
-keywords = ["bee-tracking"]
+keywords = ["bee-tracking", "machine-learning", "computer-vision"]
 
 # PyPI classifiers
 # https://pypi.org/classifiers/
@@ -49,13 +51,15 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 
-# Optional dependencies
-# https://peps.python.org/pep-0631/
+# Optional dependencies https://peps.python.org/pep-0631/
 [project.optional-dependencies]
 test = [
     "flake8",
     "pytest"
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "beelabel.__version__"}
 
 [project.urls]
 Homepage = "https://www.sheffield.ac.uk/dcs/people/academic/michael-smith"
