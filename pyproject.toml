@@ -53,13 +53,14 @@ classifiers = [
 
 # Optional dependencies https://peps.python.org/pep-0631/
 [project.optional-dependencies]
+# Automatic testing framework
 test = [
     "flake8",
     "pytest"
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "beelabel.__version__"}
+version = {attr = "flight_path_inference.__version__"}
 
 [project.urls]
 Homepage = "https://www.sheffield.ac.uk/dcs/people/academic/michael-smith"
