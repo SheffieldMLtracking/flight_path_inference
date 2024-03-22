@@ -1,5 +1,7 @@
 # Security Policy
 
+See read the [security policy](https://github.com/SheffieldMLtracking/.github/blob/main/SECURITY.md).
+
 ## Supported Versions
 
 These versions of this project are currently being supported with security updates.
@@ -7,7 +9,3 @@ These versions of this project are currently being supported with security updat
 | Version | Supported          |
 | ------- | ------------------ |
 | 0.x.x   | :white_check_mark: |
-
-## Reporting a Vulnerability
-
-To report a security vulnerability please contact [Dr Michael Smith](https://www.sheffield.ac.uk/dcs/people/academic/michael-smith).
